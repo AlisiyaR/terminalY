@@ -24,6 +24,20 @@
       font-size: 2.5rem;
     }
 
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
     .cards {
       display: flex;
       justify-content: center;
@@ -83,8 +97,21 @@
 <body>
   <header>
     <h1>TerminalY</h1>
-    <p>Fast. Trendy. Personalized Shopping Insights</p>
+    <div class="subtitle">Fast. Trendy. Personalized Shopping Insights</div>
   </header>
+
+  <!-- Company explanation -->
+  <div class="intro" id="home-intro">
+    <p><strong>Explanation on the company:</strong></p>
+    <p>
+      At TerminalY, we believe online shopping should be fast, easy, and always on-trend. That’s why we run our entire fashion store online – from stylish clothing and footwear to beauty, jewelry, and home essentials.
+    </p>
+    <p>
+      Enjoy lightning-fast delivery (up to 3 business days) and hassle-free returns with door-to-door service.
+      Our system tracks all 2024 orders and gives our team powerful insights into customer trends, preferences, and business performance – all while keeping things personal, with unique customer profiles.
+    </p>
+    <p><strong>Shop smarter. Dress better. Only at TerminalY.</strong></p>
+  </div>
 
   <!-- Home buttons -->
   <div id="home" class="cards">
@@ -114,20 +141,18 @@
     <div class="back-btn" onclick="goBack()">← Back to Home</div>
   </div>
 
-  <!-- Tableau script once -->
+  <!-- Tableau script -->
   <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
   <script>
     function loadDashboard(id) {
-      // Hide home & other dashboards
       document.getElementById('home').style.display = 'none';
+      document.getElementById('home-intro').style.display = 'none';
       ['product', 'strategy', 'logistics'].forEach(section => {
         document.getElementById(section).style.display = 'none';
       });
 
-      // Show selected dashboard
       document.getElementById(id).style.display = 'block';
 
-      // Only load if not already loaded
       if (!document.getElementById('vizObj_' + id)) {
         let container = document.getElementById({
           product: 'viz1',
@@ -148,7 +173,7 @@
           height: "700px"
         });
 
-        viz.getVizContainer().id = 'vizObj_' + id; // Prevent double-loading
+        viz.getVizContainer().id = 'vizObj_' + id;
       }
     }
 
@@ -157,6 +182,7 @@
         document.getElementById(section).style.display = 'none';
       });
       document.getElementById('home').style.display = 'flex';
+      document.getElementById('home-intro').style.display = 'block';
     }
   </script>
 </body>
