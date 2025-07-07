@@ -1,83 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TerminalY | Dashboards</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>TerminalY Dashboards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e6f0ff, #ffffff);
+      background: #f6f9fc;
       color: #333;
       text-align: center;
     }
 
     header {
       background: linear-gradient(to right, #6a11cb, #2575fc);
+      padding: 2rem;
       color: white;
-      padding: 3rem 2rem;
     }
 
     h1 {
-      font-size: 2.5rem;
       margin: 0;
-    }
-
-    .subtitle {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-
-    .intro {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.6;
-      font-size: 1.1rem;
+      font-size: 2.5rem;
     }
 
     .cards {
       display: flex;
       justify-content: center;
-      gap: 2rem;
       flex-wrap: wrap;
-      margin: 3rem auto;
+      gap: 2rem;
+      margin: 2rem;
     }
 
     .card {
       background: white;
       padding: 1.5rem 2rem;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      color: #2575fc;
-      font-weight: bold;
-      font-size: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       cursor: pointer;
+      color: #2575fc;
+      font-size: 1.2rem;
+      font-weight: bold;
       transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
 
-    .section {
+    .dashboard-container {
       display: none;
       max-width: 1000px;
       margin: 2rem auto;
     }
 
     .dashboard-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
       margin-bottom: 1rem;
       color: #2575fc;
     }
 
     .back-btn {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       display: inline-block;
       padding: 10px 20px;
       background: #2575fc;
@@ -87,7 +73,7 @@
       text-decoration: none;
     }
 
-    iframe, object {
+    iframe {
       width: 100%;
       height: 700px;
       border: none;
@@ -97,98 +83,81 @@
 <body>
   <header>
     <h1>TerminalY</h1>
-    <div class="subtitle">Fast. Trendy. Personalized Shopping Insights</div>
+    <p>Fast. Trendy. Personalized Shopping Insights</p>
   </header>
 
-  <div class="intro" id="home-intro">
-    <p>
-      At TerminalY, we believe online shopping should be fast, easy, and always on-trend.
-      That’s why we run our entire fashion store online – from stylish clothing and footwear
-      to beauty, jewelry, and home essentials.
-    </p>
-    <p>
-      Enjoy lightning-fast delivery (up to 3 business days) and hassle-free returns with door-to-door service.
-      Our system tracks all 2024 orders and gives our team powerful insights into customer trends,
-      preferences, and business performance – all while keeping things personal, with unique customer profiles.
-    </p>
+  <!-- Home buttons -->
+  <div id="home" class="cards">
+    <div class="card" onclick="loadDashboard('product')">Product Management Team</div>
+    <div class="card" onclick="loadDashboard('strategy')">Strategy Team</div>
+    <div class="card" onclick="loadDashboard('logistics')">Logistics Team</div>
   </div>
 
-  <div class="cards" id="home-buttons">
-    <div class="card" onclick="showSection('product')">Product Management Team</div>
-    <div class="card" onclick="showSection('strategy')">Strategy Team</div>
-    <div class="card" onclick="showSection('logistics')">Logistics Team</div>
-  </div>
-
-  <!-- Product Section -->
-  <div class="section" id="product">
+  <!-- Dashboard 1 -->
+  <div id="product" class="dashboard-container">
     <div class="dashboard-title">Distribution of categories in canceled and non-cancelled orders</div>
-    <div class='tableauPlaceholder' id='viz1'>
-      <noscript><a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard1/Dashboard1/1_rss.png' /></a></noscript>
-      <object class='tableauViz'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-        <param name='embed_code_version' value='3'/>
-        <param name='name' value='FinalProject-dashboard1/Dashboard1'/>
-        <param name='tabs' value='no'/>
-        <param name='toolbar' value='yes'/>
-      </object>
-    </div>
-    <div class="back-btn" onclick="goHome()">Back to Home</div>
+    <div class='tableauPlaceholder' id='viz1'></div>
+    <div class="back-btn" onclick="goBack()">← Back to Home</div>
   </div>
 
-  <!-- Strategy Section -->
-  <div class="section" id="strategy">
+  <!-- Dashboard 2 -->
+  <div id="strategy" class="dashboard-container">
     <div class="dashboard-title">Revenues per company by focus group combinations</div>
-    <div class='tableauPlaceholder' id='viz2'>
-      <noscript><a href='#'><img alt='Dashboard 2' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard2/Dashboard2/1_rss.png' /></a></noscript>
-      <object class='tableauViz'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-        <param name='embed_code_version' value='3'/>
-        <param name='name' value='FinalProject-dashboard2/Dashboard2'/>
-        <param name='tabs' value='no'/>
-        <param name='toolbar' value='yes'/>
-      </object>
-    </div>
-    <div class="back-btn" onclick="goHome()">Back to Home</div>
+    <div class='tableauPlaceholder' id='viz2'></div>
+    <div class="back-btn" onclick="goBack()">← Back to Home</div>
   </div>
 
-  <!-- Logistics Section -->
-  <div class="section" id="logistics">
+  <!-- Dashboard 3 -->
+  <div id="logistics" class="dashboard-container">
     <div class="dashboard-title">Monthly and annual sales volume for each category</div>
-    <div class='tableauPlaceholder' id='viz3'>
-      <noscript><a href='#'><img alt='Dashboard 3' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard3/Dashboard3/1_rss.png' /></a></noscript>
-      <object class='tableauViz'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-        <param name='embed_code_version' value='3'/>
-        <param name='name' value='FinalProject-dashboard3/Dashboard3'/>
-        <param name='tabs' value='no'/>
-        <param name='toolbar' value='yes'/>
-      </object>
-    </div>
-    <div class="back-btn" onclick="goHome()">Back to Home</div>
+    <div class='tableauPlaceholder' id='viz3'></div>
+    <div class="back-btn" onclick="goBack()">← Back to Home</div>
   </div>
 
-  <script type='text/javascript'>
-    function showSection(id) {
-      document.getElementById('home-intro').style.display = 'none';
-      document.getElementById('home-buttons').style.display = 'none';
-      ['product', 'strategy', 'logistics'].forEach(function(section) {
+  <!-- Tableau script once -->
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+  <script>
+    function loadDashboard(id) {
+      // Hide home & other dashboards
+      document.getElementById('home').style.display = 'none';
+      ['product', 'strategy', 'logistics'].forEach(section => {
         document.getElementById(section).style.display = 'none';
       });
+
+      // Show selected dashboard
       document.getElementById(id).style.display = 'block';
+
+      // Only load if not already loaded
+      if (!document.getElementById('vizObj_' + id)) {
+        let container = document.getElementById({
+          product: 'viz1',
+          strategy: 'viz2',
+          logistics: 'viz3'
+        }[id]);
+
+        let url = {
+          product: 'https://public.tableau.com/views/FinalProject-dashboard1/Dashboard1',
+          strategy: 'https://public.tableau.com/views/FinalProject-dashboard2/Dashboard2',
+          logistics: 'https://public.tableau.com/views/FinalProject-dashboard3/Dashboard3'
+        }[id];
+
+        let viz = new tableau.Viz(container, url, {
+          hideTabs: true,
+          hideToolbar: false,
+          width: "100%",
+          height: "700px"
+        });
+
+        viz.getVizContainer().id = 'vizObj_' + id; // Prevent double-loading
+      }
     }
 
-    function goHome() {
-      ['product', 'strategy', 'logistics'].forEach(function(section) {
+    function goBack() {
+      ['product', 'strategy', 'logistics'].forEach(section => {
         document.getElementById(section).style.display = 'none';
       });
-      document.getElementById('home-intro').style.display = 'block';
-      document.getElementById('home-buttons').style.display = 'flex';
+      document.getElementById('home').style.display = 'flex';
     }
-
-    // load Tableau script
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    document.body.appendChild(scriptElement);
   </script>
 </body>
 </html>
