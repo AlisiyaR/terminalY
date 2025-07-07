@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TerminalY | Home</title>
+  <meta charset="UTF-8">
+  <title>TerminalY | Dashboards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e3e3f3, #ffffff);
+      background: linear-gradient(to right, #e6f0ff, #ffffff);
       color: #333;
+      text-align: center;
     }
 
     header {
       background: linear-gradient(to right, #6a11cb, #2575fc);
       color: white;
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 1s ease-in;
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 300;
     }
 
     .intro {
@@ -26,6 +36,7 @@
       margin: auto;
       text-align: center;
       line-height: 1.6;
+      font-size: 1.1rem;
     }
 
     .cards {
@@ -33,219 +44,151 @@
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
-      margin: 2rem;
+      margin: 3rem auto;
     }
 
     .card {
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
-      padding: 2rem 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      color: #2575fc;
+      font-weight: bold;
+      font-size: 1.2rem;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
     }
 
-    a.card {
-      text-decoration: none;
+    .section {
+      display: none;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+
+    .dashboard-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #2575fc;
-      font-weight: bold;
-      font-size: 1.1rem;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .back-btn {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #2575fc;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    iframe, object {
+      width: 100%;
+      height: 700px;
+      border: none;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>TerminalY</h1>
-    <p>Fast. Trendy. Personalized Shopping Insights</p>
+    <div class="subtitle">Fast. Trendy. Personalized Shopping Insights</div>
   </header>
 
-  <section class="intro">
+  <div class="intro" id="home-intro">
     <p>
-      At TerminalY, we believe online shopping should be fast, easy, and always on-trend. That’s why we run our entire fashion store online – from stylish clothing and footwear to beauty, jewelry, and home essentials.
-      Enjoy lightning-fast delivery (up to 3 business days) and hassle-free returns with door-to-door service.
-      Our system tracks all 2024 orders and gives our team powerful insights into customer trends, preferences, and business performance – all while keeping things personal, with unique customer profiles.
+      At TerminalY, we believe online shopping should be fast, easy, and always on-trend.
+      That’s why we run our entire fashion store online – from stylish clothing and footwear
+      to beauty, jewelry, and home essentials.
     </p>
-  </section>
-
-  <section class="cards">
-    <a href="product.html" class="card">Product Management Team</a>
-    <a href="strategy.html" class="card">Strategy Team</a>
-    <a href="logistics.html" class="card">Logistics Team</a>
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Management Dashboard</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f3f4f6, #dbeafe);
-      color: #333;
-      text-align: center;
-    }
-
-    header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      padding: 2rem;
-      color: white;
-    }
-
-    .dashboard-title {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .dashboard-container {
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 1000px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Product Management Team</h1>
-  </header>
-  <div class="dashboard-title">Distribution of categories in canceled and non-cancelled orders</div>
-  <div class="dashboard-container">
-    <div class='tableauPlaceholder' id='viz1751887095773' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard1/Dashboard1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='FinalProject-dashboard1/Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalProject-dashboard1/Dashboard1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+    <p>
+      Enjoy lightning-fast delivery (up to 3 business days) and hassle-free returns with door-to-door service.
+      Our system tracks all 2024 orders and gives our team powerful insights into customer trends,
+      preferences, and business performance – all while keeping things personal, with unique customer profiles.
+    </p>
   </div>
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1751887095773');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if (divElement.offsetWidth > 800) {
-      vizElement.style.minWidth='420px';
-      vizElement.style.width='100%';
-      vizElement.style.height='800px';
-    } else {
-      vizElement.style.width='100%';
-      vizElement.style.height='700px';
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strategy Team Dashboard</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fef9ff, #e0f7fa);
-      color: #333;
-      text-align: center;
-      margin: 0;
-    }
 
-    header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      padding: 2rem;
-      color: white;
-    }
-
-    .dashboard-title {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .dashboard-container {
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 1000px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Strategy Team</h1>
-  </header>
-  <div class="dashboard-title">Revenues per company by focus group combinations</div>
-  <div class="dashboard-container">
-    <div class='tableauPlaceholder' id='viz1751884591169' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard2/Dashboard2/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='FinalProject-dashboard2/Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalProject-dashboard2/Dashboard2/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+  <div class="cards" id="home-buttons">
+    <div class="card" onclick="showSection('product')">Product Management Team</div>
+    <div class="card" onclick="showSection('strategy')">Strategy Team</div>
+    <div class="card" onclick="showSection('logistics')">Logistics Team</div>
   </div>
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1751884591169');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width = '100%';
-    vizElement.style.height = '800px';
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Logistics Team Dashboard</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f2f1, #ffffff);
-      color: #333;
-      text-align: center;
-      margin: 0;
-    }
 
-    header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      padding: 2rem;
-      color: white;
-    }
-
-    .dashboard-title {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .dashboard-container {
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 1000px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Logistics Team</h1>
-  </header>
-  <div class="dashboard-title">Monthly and annual sales volume for each category</div>
-  <div class="dashboard-container">
-    <div class='tableauPlaceholder' id='viz1751884601131' style='position: relative'><noscript><a href='#'><img alt='Dashboard 3 ' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard3/Dashboard3/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='FinalProject-dashboard3/Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Fi/FinalProject-dashboard3/Dashboard3/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+  <!-- Product Section -->
+  <div class="section" id="product">
+    <div class="dashboard-title">Distribution of categories in canceled and non-cancelled orders</div>
+    <div class='tableauPlaceholder' id='viz1'>
+      <noscript><a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard1/Dashboard1/1_rss.png' /></a></noscript>
+      <object class='tableauViz'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+        <param name='embed_code_version' value='3'/>
+        <param name='name' value='FinalProject-dashboard1/Dashboard1'/>
+        <param name='tabs' value='no'/>
+        <param name='toolbar' value='yes'/>
+      </object>
+    </div>
+    <div class="back-btn" onclick="goHome()">Back to Home</div>
   </div>
+
+  <!-- Strategy Section -->
+  <div class="section" id="strategy">
+    <div class="dashboard-title">Revenues per company by focus group combinations</div>
+    <div class='tableauPlaceholder' id='viz2'>
+      <noscript><a href='#'><img alt='Dashboard 2' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard2/Dashboard2/1_rss.png' /></a></noscript>
+      <object class='tableauViz'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+        <param name='embed_code_version' value='3'/>
+        <param name='name' value='FinalProject-dashboard2/Dashboard2'/>
+        <param name='tabs' value='no'/>
+        <param name='toolbar' value='yes'/>
+      </object>
+    </div>
+    <div class="back-btn" onclick="goHome()">Back to Home</div>
+  </div>
+
+  <!-- Logistics Section -->
+  <div class="section" id="logistics">
+    <div class="dashboard-title">Monthly and annual sales volume for each category</div>
+    <div class='tableauPlaceholder' id='viz3'>
+      <noscript><a href='#'><img alt='Dashboard 3' src='https://public.tableau.com/static/images/Fi/FinalProject-dashboard3/Dashboard3/1_rss.png' /></a></noscript>
+      <object class='tableauViz'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+        <param name='embed_code_version' value='3'/>
+        <param name='name' value='FinalProject-dashboard3/Dashboard3'/>
+        <param name='tabs' value='no'/>
+        <param name='toolbar' value='yes'/>
+      </object>
+    </div>
+    <div class="back-btn" onclick="goHome()">Back to Home</div>
+  </div>
+
   <script type='text/javascript'>
-    var divElement = document.getElementById('viz1751884601131');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width = '100%';
-    vizElement.style.height = '800px';
-    var scriptElement = document.createElement('script');
+    function showSection(id) {
+      document.getElementById('home-intro').style.display = 'none';
+      document.getElementById('home-buttons').style.display = 'none';
+      ['product', 'strategy', 'logistics'].forEach(function(section) {
+        document.getElementById(section).style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function goHome() {
+      ['product', 'strategy', 'logistics'].forEach(function(section) {
+        document.getElementById(section).style.display = 'none';
+      });
+      document.getElementById('home-intro').style.display = 'block';
+      document.getElementById('home-buttons').style.display = 'flex';
+    }
+
+    // load Tableau script
+    const scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    document.body.appendChild(scriptElement);
   </script>
 </body>
 </html>
